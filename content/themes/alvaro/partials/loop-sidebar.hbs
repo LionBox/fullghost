@@ -1,0 +1,68 @@
+{{! This is the post loop - each post will be output using this markup }}
+
+<div class="row uniform">
+<header class="12u$ section-header"><h1>Latest Posts</h1></header>
+
+{{#foreach posts}}
+    <div class="row uniform">
+
+    {{#if @odd}}
+        {{#if image}}
+            <section class="loop-image 6u 12u$(2)">
+                <a href="{{url}}" class="feature-image"><img src="{{image}}" /></a>
+            </section>
+        {{/if}}
+        {{#if image}}
+        <section class="loop-excerpt 6u 12u$(2)">
+        {{else}}
+        <section class="loop-excerpt 12u$">
+        {{/if}}
+            <div class="post-container">
+                <header class="post-header">
+                    <h3 class="post-title {{#if featured}}post-featured{{/if}}"><a href="{{url}}">{{title}}</a></h3>
+                    <p class="post-meta">by {{author}} on <time class="blog-date" datetime="{{date format='MMMM DD, YYYY'}}">{{date format="MMMM DD, YYYY"}}</time></p>
+                </header>
+
+                <article class="post-content">
+                    <p>{{excerpt words="40"}} ...</p>
+                </article>
+
+                <a href="{{url}}" class="read-more">Read More »</a>
+            </div>
+        </section>
+
+        {{#if @last}}
+        {{else}}
+        <div class="12u$"><hr/></div>
+        {{/if}}
+    {{else}}
+        {{#if image}}
+        <section class="loop-excerpt 6u 12u$(2)">
+        {{else}}
+        <section class="loop-excerpt 12u$">
+        {{/if}}
+            <div class="post-container">
+                <header class="post-header">
+                    <h3 class="post-title {{#if featured}}post-featured{{/if}}"><a href="{{url}}">{{title}}</a></h3>
+                    <p class="post-meta">by {{author}} on <time class="blog-date" datetime="{{date format='MMMM DD, YYYY'}}">{{date format="MMMM DD, YYYY"}}</time></p>
+                </header>
+                <article class="post-content">
+                    <p>{{excerpt characters="300"}}...</p>
+                </article>
+                <a href="{{url}}" class="read-more text-right">Read More »</a>
+            </div>
+        </section>
+        {{#if image}}
+            <section class="loop-image 6u 12u$(2)">
+                <a href="{{url}}" class="feature-image"><img src="{{image}}" /></a>
+            </section>
+        {{/if}}
+        {{#if @last}}
+        {{else}}
+        <div class="12u$"><hr/></div>
+        {{/if}}
+    {{/if}}
+
+    </div>
+{{/foreach}}
+</div>

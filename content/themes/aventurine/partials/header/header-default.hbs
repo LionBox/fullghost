@@ -1,0 +1,26 @@
+<!-- Header -->
+<header id="header">
+    <div class="container">
+        <div class="12u">
+            {{#if @blog.logo}}
+                <div id="logo">
+                    <a href="{{@blog.url}}">
+                        <img src="{{@blog.logo}}" />
+                    </a>
+                </div>
+            {{else}}
+                <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            {{/if}}
+            <nav id="nav">
+                {{navigation}}
+            </nav>
+        </div>
+    </div>
+</header>
+<aside id="sub-header" class="container">
+    <div class="row">
+        <div class="12u">
+            {{>social-icons}}
+        </div>
+    </div>
+</aside>

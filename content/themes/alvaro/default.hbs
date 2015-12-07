@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    <!--[if lte IE 8]><script src="{{asset "js/html5shiv.js"}}"></script><![endif]-->
+
+    {{! Styles'n'Scripts }}
+    <!-- jQuery -->
+    <script src="{{asset "js/jquery.min.js"}}" ></script>
+
+    <!-- SkelJS Framework by n33co -->
+    <script src="{{asset "js/skel.min.js"}}"></script>
+    <script src="{{asset "js/skel-layers.min.js"}}"></script>
+
+    <!-- Main JS Initialization -->
+    <script src="{{asset "js/init.js"}}"></script>
+    <link href='http://fonts.googleapis.com/css?family=Megrim:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:300,700' rel='stylesheet' type='text/css'>
+
+    <noscript>
+        <link rel="stylesheet" href="{{asset "css/skel.css"}}" />
+        <link rel="stylesheet" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" href="{{asset "css/style-xlarge.css"}}" />
+
+        <link rel="stylesheet" href="{{asset "css/style-custom.css"}}" />
+    </noscript>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body id="top" class="{{body_class}}">
+    {{>header/header-default}}
+
+    {{#is "home"}}
+    <div class="container">
+        <div class="row">
+                <div class="4u">{{>sidebar/sidebar-default}}</div>
+                <div class="8u">{{>loop-sidebar}}</div>
+        </div>
+    </div>
+    {{else}}
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+    {{/is}}
+
+
+
+
+
+
+    <!-- Footer -->
+	<footer id="footer">
+        <div class="rss"><a href="{{blog.url}}/rss/" class="icon fa-rss"></a></div>
+		<div class="copyright">
+            Made by <a href="https://www.lionboxmedia.com">LionBox</a> with much love and passion.<br/>
+			&copy; 2015 <a href="https://www.photodesign.es">Alvaro Ruiz</a>. All rights reserved.
+		</div>
+	</footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+@import 'vars';
+@import 'mixins';
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+
+/* Main */
+
+	#main {
+		padding: 2em 0;
+	}
+
+/* Footer */
+
+	#footer {
+		padding: 2em 0;
+
+		.copyright {
+			li {
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0;
+				display: block;
+			}
+		}
+	}
+
+    .section-header{
+        hr{
+            display:none;
+        }
+    }
+
+    .loop-excerpt .post-header h3{
+        &.post-featured{
+            padding-bottom:1em;
+            &::after{
+                display:block;
+                margin-left:0;
+            }
+        }
+    }

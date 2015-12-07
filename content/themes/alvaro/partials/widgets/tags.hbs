@@ -1,0 +1,17 @@
+{{!-- {{! Fetch only the title and slug for all posts using block params }}
+{{#get "tags" limit="3" fields="description,url,name,id" as |articles|}}
+    {{#foreach articles}}
+        URL: {{url}}
+        ID:{{id}}
+        NAME:{{name}}
+        DESCRIPTION: {{description}}
+        <a href="{{name}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+    {{/foreach}}
+{{/get}} --}}
+{{!--
+{{tags prefix=" on "}}
+{{tag.name}}
+ --}}
+{{#foreach posts}}
+    {{tags}}
+{{/foreach}}

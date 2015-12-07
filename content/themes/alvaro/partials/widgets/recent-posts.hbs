@@ -1,0 +1,6 @@
+{{! Fetch only the title and slug for all posts using block params }}
+{{#get "posts" limit="3" fields="title,slug" as |articles|}}
+    {{#foreach articles}}
+        <li><a href="{{slug}}">{{title}}</a></li>
+    {{/foreach}}
+{{/get}}
